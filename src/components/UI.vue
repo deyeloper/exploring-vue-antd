@@ -3,6 +3,20 @@
     <a-layout-header>
       <a-row type="flex" justify="space-between" align="middle">
         <a-col>
+          <a href="#" class="d-flex">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="23" x2="23" y2="40" stroke="#FF7A00" stroke-width="6"></line>
+              <line y1="17" x2="40" y2="17" stroke="#FF7A00" stroke-width="6"></line>
+            </svg>
+          </a>
+        </a-col>
+        <a-col>
           <a-dropdown :trigger="['click']">
             <a-menu slot="overlay">
               <a-menu-item key="1">
@@ -33,20 +47,6 @@
             </a-button>
           </a-dropdown>
         </a-col>
-        <a-col>
-          <a href="#" class="d-flex">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line x1="23" x2="23" y2="40" stroke="#FF7A00" stroke-width="6"></line>
-              <line y1="17" x2="40" y2="17" stroke="#FF7A00" stroke-width="6"></line>
-            </svg>
-          </a>
-        </a-col>
       </a-row>
     </a-layout-header>
   </a-layout>
@@ -55,8 +55,27 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import aLayout from "ant-design-vue/lib/layout";
+import aRow from "ant-design-vue/lib/row";
+import aCol from "ant-design-vue/lib/col";
+import aDropdown from "ant-design-vue/lib/dropdown";
+import aMenu from "ant-design-vue/lib/menu";
+import aIcon from "ant-design-vue/lib/icon";
+import aButton from "ant-design-vue/lib/button";
 
-@Component
+@Component({
+  components: {
+    aLayout,
+    aLayoutHeader: aLayout.Header,
+    aRow,
+    aCol,
+    aDropdown,
+    aMenu,
+    aMenuItem: aMenu.Item,
+    aIcon,
+    aButton
+  }
+})
 export default class UI extends Vue {
   handleClick(event: Event) {
     console.log(event);

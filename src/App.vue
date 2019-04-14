@@ -6,11 +6,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UI from "@/components/UI.vue";
+import ui from "@/components/UI.vue";
 
 export default Vue.extend({
   components: {
-    UI
+    ui
   }
 });
 </script>
